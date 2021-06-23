@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfAppAnfrage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppAnfrage"
+        mc:Ignorable="d"
+        Title="Neue Kunde" Height="650" Width="500">
+    <Grid>
+        <Label Content="Anrede" HorizontalAlignment="Left" Height="23" Margin="133,48,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.437,-0.645"/>
+        <RadioButton Content="Herr" HorizontalAlignment="Left" Height="16" Margin="172,76,0,0" VerticalAlignment="Top" Width="65"/>
+        <RadioButton Content="Frau" HorizontalAlignment="Left" Height="16" Margin="172,92,0,0" VerticalAlignment="Top" Width="65"/>
+        <Label Content="Vorname" HorizontalAlignment="Left" Height="25" Margin="142,130,0,0" VerticalAlignment="Top" Width="107"/>
+        <Label Content="Nachname" HorizontalAlignment="Left" Height="25" Margin="142,220,0,0" VerticalAlignment="Top" Width="107"/>
+        <Label Content="Strasse" HorizontalAlignment="Left" Height="25" Margin="142,307,0,0" VerticalAlignment="Top" Width="107"/>
+        <Label Content="Plz" HorizontalAlignment="Left" Height="25" Margin="142,378,0,0" VerticalAlignment="Top" Width="107"/>
+        <Label Content="Ort" HorizontalAlignment="Left" Height="25" Margin="142,456,0,0" VerticalAlignment="Top" Width="107"/>
+        <TextBox HorizontalAlignment="Left" Height="36" Margin="142,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295"/>
+        <TextBox HorizontalAlignment="Left" Height="36" Margin="142,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295"/>
+        <TextBox HorizontalAlignment="Left" Height="36" Margin="142,403,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295"/>
+        <TextBox HorizontalAlignment="Left" Height="36" Margin="142,481,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295"/>
+        <TextBox HorizontalAlignment="Left" Height="36" Margin="142,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295"/>
+        <Button Content="Anmelden" HorizontalAlignment="Left" Height="34" Margin="142,557,0,0" VerticalAlignment="Top" Width="107"/>
+        <Button Content="Löschen" HorizontalAlignment="Left" Height="34" Margin="292,557,0,0" VerticalAlignment="Top" Width="107"/>
+
+    </Grid>
+</Window>
