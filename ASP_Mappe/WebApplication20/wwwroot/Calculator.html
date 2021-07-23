@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="css/site.css" rel="stylesheet" />
+
+    <title>CALCULATOR</title>
+</head>
+<body>
+    First Number:  <input type="number" id="fnum" /><br />
+    Scnd Number:  <input type="number" id="snum" /><br />
+
+    <br />
+
+    Operation :
+    <select id="operation">
+        <option value="add">+</option>
+        <option value="subtract">-</option>
+        <option value="divide">/</option>
+        <option value="multiply">*</option>
+    </select><br /><br />
+
+    <input type="button" id="Submit" value="Calculate" onclick="calculate()" />
+
+    <script>
+        var num1 = parseInt(document.getElementById("fnum").value);
+        var num2 = parseInt(document.getElementById("snum").value);
+        var op = document.getElementById("operation").value
+
+  if (operation == add) {
+       var answer = num1 + num2;
+      return answer;
+        }
+        
+  else if (operation == 2) {
+      var answer = num1 - num2;
+      return answer;
+  }
+  else if (operation == 3) {
+      var answer = num1 / num2;
+      return answer;
+  }
+  else {
+      var answer = num1 * num2;
+      return answer;
+        };
+
+    </script>
+
+</body>
+</html>
