@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width = device-width, inirial-scale=1.0" />
+    <title>Formular</title>
+
+    <style>
+        input{
+            background-color: beige;
+        }
+
+        form{
+            width: 50vw;
+            border: 10px dotted pink;
+            margin: 10px auto;
+
+            display: grid inline-flex;
+            grid-template-columns: aut inherit;
+        }
+
+   
+
+    </style>
+</head>
+<body>
+    <!--struktiriere das Fomular (HTML), um die Persondaten dort speichern zu können-->
+    <form id="MyForm">
+        <label for="idName">Vorname: </label>
+        <input type="text" name="vorname" id="idVorname" /><br /><br />
+        <label for="idName">Nachname: </label>
+        <input type="text" name="nachname" id="idNachname" /><br /><br />
+        <label for="idTelefon">Telefon: </label>
+        <input type="tel" name="telephone" id="idTelefon" /><br /><br />
+        <label for="idE-Mail">E-Mail: </label>
+        <input type="email" name="email" id="idE-Mail" /><br /><br />
+        <label for="idName">Geschlecht: </label>
+        <input type="radio" name="gender" id="idWeiblich">Weiblich
+        <input type="radio" name="gender" id="idMännlich">Männlich<br /><br />
+        <input type="submit" name="Submit" id="idSubmit" />
+        <input type="reset" name="Reset" id="idReset" />
+        
+    </form>
+
+    <script>
+        let personDaten = { vorname: "Stephen", nachname: "Kamau", telefon: "0723808568", email: "stevekamau01@yahoo.com" };
+        let personDaten1 = { vorname: "Maria", nachname: "Maua", telefon: "072380457", email: "mariamaua@yahoo.com" };
+        
+        /*Aufgabe
+         struktiriere das Fomular (HTML), um die Persondaten dort speichern zu können
+
+         Fülle die Felder mit den personenDaten aus (JavaScript)
+
+         Gestalte das Form-Element (CSS), etwa mit der CSS Grid*/
+
+        //Fülle die Felder mit den personenDaten aus (JavaScript)
+        function fuelle() {
+            document.getElementById("idVorname").value = personDaten.vorname;
+            document.getElementById("idNachname").value = personDaten.nachname;
+            document.getElementById("idTelefon").value = personDaten.telefon;
+            document.getElementById("idE-Mail").value = personDaten.email;
+        };
+         fuelle();
+       
+    </script>
+</body>
+</html>
