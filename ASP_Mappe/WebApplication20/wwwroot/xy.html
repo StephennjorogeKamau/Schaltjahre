@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/site.css" rel="stylesheet" />
+
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <h1></h1>
+    <p>das ist Seite 4...</p>
+
+    <p>"pErgebnis"</p>
+    <label for="input1">Zahl1</label>
+    <input type="number" id="input1" value="1" /><br />
+
+    <label for="input1">Zahl2</label>
+    <input type="number" id="input2" value="1" /><br /><br />
+
+    <div class="Operators">
+        <button id="btnAdd">+</button>
+        <button id="btnMinus">-</button>
+        <button id="btnMaltiply">*</button>
+        <button id="btnDivide">/</button><br /><br />
+    </div>
+
+    <button id="btnZeigeErgebnis">Zeige Ergebnis</button><br />
+
+ 
+    <script>
+
+        let btnZeigerErgebnis = document.getElementById("btnZeigerErgebnis");
+        let pErgebnis = document.getElementById("pErgebnis");
+        //btn1.addEventlistener("click")
+        alert("HALLO");
+
+        function adddiere(zahl1, zahl2) {
+            return zahl1 + zahl2;
+        }
+        btnZeigerErgebnis.addEventListener("click", druckeErgebnis);
+
+        function druckeErgebnis() {
+            let zahl1 = document.getElementById("input1").Value;
+            let zahl2 = document.getElementById("input2").Value;
+
+            pErgebnis.innerText = adddiere(zahl1, zahl2);
+        }
+
+    </script>
+</body>
+</html>
