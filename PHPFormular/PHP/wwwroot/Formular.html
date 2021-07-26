@@ -68,6 +68,8 @@
         diepersone.push({ vorname: "Esther", nachname: "Kamau", telefon: "0723123568", email: "Essxkah12@yahoo.com" });
         diepersone.push({ vorname: "Pastor", nachname: "Mark", telefon: "0723623568", email: "PstMark@yahoo.com" });
         diepersone.push({ vorname: "Laura", nachname: "Mark", telefon: "0723623568", email: "PstMark@yahoo.com" });
+        diepersone.push({ vorname: "Martin", nachname: "Lawrence", telefon: "0723623568", email: "martinLaw_yahoo.com" });
+        diepersone.push({ vorname: "Maria", nachname: "Carey", telefon: "0723623568", email: "Currywurst..yahoo.com" });
 
         console.log("Die Personen des Arrays: ");
         for (let i = 0; i < diepersone.length; i++) {
@@ -75,9 +77,6 @@
             console.log("\t" + element.vorname + " " + element.nachname + " - Email: " + element.email);
 
         }
-          
-        
-
 
         //A.Erstellen weiter personenobjekte mit der gleichen Daten struktur(Vorname, (s.os))
         //B. Speicher diese in einem Array
@@ -86,6 +85,7 @@
         //E. zähle die Vorkommen von "Steve"
         //F. Schreibe eine Funktion, die das Vorkommen eines übergebenen Nachnamens sucht (Parameter, "Nachname");
         //  Funktion soll die Anzahl des Vorkomme Zuruckgeben
+        //G. Sind alle Emails valide.
 
         //js array: Https//:www.w3schools.com/js/js_arrays.asp
 
@@ -116,11 +116,9 @@
             } else {
                     console.log ("Im Koffer befindet sich ein Schwamm")
             }
-
-           
-
-             //Untersuche, ob im  Liste Mark komst vor
         }
+
+        //Untersuche, ob im  Liste Mark komst vor
         let istPersonImListe = false;
         for (let i = 0; i < diepersone.length; i++) {
             const aktuellePerson = diepersone[i]
@@ -170,6 +168,35 @@
             }
             return anzahl;
         }
+
+        //Emails valide.
+        let EmailValide = true;
+        for (let i = 0; i < personDaten.length; i++) {
+            if (diepersone[i].email.includes("@") != true) {
+                EmailValide = false;
+                break;
+            }
+        }
+        if (EmailValide == true) {
+            console.log("Alle Emails sind Valide");
+
+        } else {
+             console.log("mindestens Emails sind nicht Valide");
+        }
+
+        //Personen mit invaliden Emails sollen in ein zweites Array gespeichert werden
+        let personenMitInvalidenMails = [];
+        for (let i = 0; i < diepersone.length; i++) {
+            if (diepersone[i].email.includes("@") != true) {
+                personenMitInvalidenMails.push(diepersone[i]);
+            }
+        }
+        console.log("Anzahl von Personen mit invalider Emails: " + personenMitInvalidenMails.length);
+        for (let i = 0; i < personenMitInvalidenMails.length; i++) {
+            const element = personenMitInvalidenMails[i];
+            console.log("\tinvalide Emails: " + element.email + "von " + element.nachname);
+        }
+
 
         
 
