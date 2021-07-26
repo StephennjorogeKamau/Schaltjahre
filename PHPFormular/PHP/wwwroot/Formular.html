@@ -81,6 +81,9 @@
         //B. Speicher diese in einem Array
         //C. gib schleifenbasiert sämtliche wert aus (vgl.unten)
         //D. Checke ob Herr Kron In der Liste vorkommt....
+        //E. zähle die Vorkommen von "Steve"
+        //F. Schreibe eine Funktion, die das Vorkommen eines übergebenen Nachnamens sucht (Parameter, "Nachname");
+        //  Funktion soll die Anzahl des Vorkomme Zuruckgeben
 
         //js array: Https//:www.w3schools.com/js/js_arrays.asp
 
@@ -117,8 +120,9 @@
              //Untersuche, ob im  Liste Mark komst vor
         }
         let istPersonImListe = false;
-            for (let i = 0; i < diepersone.length; i++) {
-                if (diepersone[i] == "Mark") {
+        for (let i = 0; i < diepersone.length; i++) {
+            const aktuellePerson = diepersone[i]
+            if (aktuellePerson.nachname == "Mark") {
                 istSchwammImKoffer = true;
                 break;
 
@@ -130,7 +134,29 @@
                     console.log("Im Liste findet sich Mark")
                 }
             }
+        //zählen die Anzahl der Hemeden im Koffer
+        let zaehler = 0;
+        for (let index = 0; index < koffer.length; index++) {
+            const inhalt = koffer[index];
+            if (inhalt == "Hemd") {
+                zaehler++;
+            }
+            
+        }
+        console.log("Hemd werde " + zaehler + " Mal gefunden!");
 
+        //übergebenen Nachnamens sucht
+        let zahler = 0;
+        for (let i = 0; i < personDaten.length; i++) {
+            const name = personDaten[i];
+            if (name.nachname == name) {
+                zahler++;
+            }
+            
+        }
+        console.log("Nachname werde " + zahler + " Mal gefunden!");
+
+        
 
        
     </script>
