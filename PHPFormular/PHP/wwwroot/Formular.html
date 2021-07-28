@@ -20,7 +20,7 @@
             grid-template-columns: aut inherit;
         }
         button{
-            width : 60px;
+            width : 90px;
             height : 20px;
         }
     </style>
@@ -47,13 +47,18 @@
     <div class="navbutton">
          <input type="submit" name="Submit" id="idSubmit" />
         <input type="reset" name="Reset" id="idReset" />
-        <button name="Vorsetzt" />
-        <button name="Rückssetzt" />
-       
+        <button id="idrucksetz">Erste</button>
+        <button id="idvorwaert" >Vorwärts</button>
+        <button id="idruckwaert">Rückswärts</button>
+        <button id="idrucksetz">Läste</button>
     </div>
     </form>
 
     <script>
+
+       
+
+
         let personDaten = { vorname: "Stephen", nachname: "Kamau", telefon: "0723808568", email: "stevekamau01@yahoo.com", alter: 28 };
         // let personDaten1 = { vorname: "Maria", nachname: "Maua", telefon: "072380457", email: "mariamaua@yahoo.com" };
 
@@ -231,8 +236,30 @@
         let durchschnitt = gesamtAlter / diepersone.length;
         console.log("Gesamteralter (" + gesamtAlter + ") durch Anzahl Personen (" + diepersone.length + ") = Durschnnit: " + durchschnitt);
 
-        //gib aus: älteste Person
-        let index
+       
+
+        //Button Vorsetz und rucksetz
+        document.getElementById("idvorsetz").addEventListener("click", zuErste);
+        document.getElementById("idrucksetz").addEventListener("click", zuLäste );
+
+        function input(personDaten) {
+
+            document.getElementById("idVorname").value = personDaten.vorname;
+            document.getElementById("idNachname").value = personDaten.nachname;
+            document.getElementById("idTelefon").value = personDaten.telefon;
+            document.getElementById("idE-Mail").value = personDaten.email;
+            document.getElementById("idAlter").value = personDaten.alter;
+        }
+        function zuErste() {
+            input(diepersone[diepersone.length]);
+            personDatenIndex = 0;
+        }
+        function zuLäste() {
+            input(diepersone[0]);
+            personDatenIndex = -1;
+        }
+        
+        
 
     </script>
 </body>
