@@ -1,0 +1,279 @@
+﻿
+@{
+
+    Layout = null;
+ }
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular</title>
+    <style>
+
+
+        input {
+            background-color: lightblue;
+        }
+            /*wähle das Element aus, sofern es den Fokus hat*/
+            input:focus {
+                background-color: lightcoral;
+            }
+
+        form {
+            width: 50vw; /*viewport width: Breite des Sichtbereichs*/
+            border: 10px double lightblue;
+            margin: 10px auto;
+            display: grid;
+            row-gap: 5px; /*Zeilenabstand*/
+            column-gap: 10px; /*Spaltenabstand*/
+            grid-template-columns: auto minmax(100px, 1fr); /*1. Spalte sei so breit wie das breiteste Kind -
+            2.Spalte sei: mindestens 100px breit, höchstens aber 1fr */
+        }
+
+        /*wähle Elemente aus, die ein "type"-Attribut mit dem Wert "submit" besitzen*/
+        [type=submit] {
+            background-color: lightgrey;
+            margin: 5px 1px;
+            grid-column: 2/3; /*Element soll in die 2. Zelle (und an die 3. angrenzen)*/
+        }
+
+            /*wähle den submit-Button aus, wenn der Cursor über ihm schwebt*/
+            [type=submit]:hover {
+                color: gray;
+                background-color: white;
+                cursor: pointer;
+            }
+
+            /*wähle den submit-Button aus, wenn er gedrückt wird*/
+            [type=submit]:active {
+                border: 3px solid green;
+                cursor: progress;
+            }
+
+
+        .navbuttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .warnhinweis {
+            color: red;
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
+            font-style: italic;
+        }
+
+        form > div {
+            min-height: 33px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/Home/VerarbeiteFormularGET" method="get" onsubmit="return validiere()" novalidate>
+        <!-- mit novalidate: schalte Browser-Validierung aus  -->
+        <label for="idVorname">Vorname*</label>
+        <div>
+            <input type="text" name="vorname" id="idVorname" required />
+            <span class="warnhinweis" style="display: none;" id="fehlerVorname">
+                Vorname darf nicht leer sein
+            </span>
+
+        </div>
+        <label for="nachname">Nachname</label>
+        <div>
+            <input type="text" name="nachname" id="nachname" />
+            <span class="warnhinweis" style="display: none;" id="fehlerNachname">
+                Nachname muss mindestens 2 Buchstaben enthalten
+            </span>
+        </div>
+        <label for="alter">Alter</label>
+        <div>
+            <input type="number" name="alter" id="alter" min="10" max="100" />
+            <!-- gib mit min und max range/
+            gültigen Wertebereich an-->
+            <span class="warnhinweis" style="display: none;" id="fehlerAlter">
+                Alter muss zwischen 18 und 120 sein
+            </span>
+        </div>
+        <label for="telefon">Telefon</label>
+        <div>
+            <input type="text" name="telefon" id="telefon" />
+        </div>
+        <label for="email">Email</label>
+        <div>
+            <input type="email" name="email" id="email" />
+        </div>
+        <div>
+            <input type="submit" value="schicke Daten zum Server!">
+        </div>
+    </form>
+    <div class="navbuttons">
+        <button id="btnErste">Erste</button>
+        <button id="btnRueckw">Rückwärts</button>
+        <button id="btnVorw">Vorwärts</button>
+        <button id="btnLetzte">Letzte</button>
+    </div>
+
+    <script>
+            document.getElementById("btnErste").addEventListener("click", zuEins );
+            document.getElementById("btnLetzte").addEventListener("click", zumLetzten);
+            document.getElementById("btnRueckw").addEventListener("click", rueckwaerts);
+            document.getElementById("btnVorw").addEventListener("click", vorwaerts);
+
+
+            let personenIndex = 0;
+
+            function befuelleInputs(person)
+            {
+                document.getElementById("idVorname").value = person.vorname;
+                document.getElementById("nachname").value = person.nachname;
+                document.getElementById("telefon").value = person.telefon;
+                document.getElementById("email").value = person.email;
+                document.getElementById("alter").value = person.alter;
+            }
+
+            function zuEins()
+        {
+            befuelleInputs(diePersonen[0]);
+            personenIndex = 0;
+        }
+
+        function zumLetzten()
+        {
+            befuelleInputs(diePersonen[diePersonen.length-1]);
+            personenIndex = diePersonen.length - 1;
+        }
+        function vorwaerts()
+        {
+            if (personenIndex < diePersonen.length - 1 ) {
+                personenIndex++;
+                let dieAnzuzeigendePerson = diePersonen[personenIndex];
+                befuelleInputs(dieAnzuzeigendePerson);
+
+            }else{
+                console.log("Personenindex darf nicht größer werden als: " + personenIndex +" weil sich nur "
+                + (personenIndex + 1) + " Personen in dem Array befinden...");
+            }
+        }
+
+        function rueckwaerts()
+        {
+            if (personenIndex > 0) {
+                befuelleInputs(diePersonen[--personenIndex]);
+            }
+        }
+
+        let personenDaten = { vorname: "Hans", nachname: "Müller", telefon: "0723/345223", email: "blablaba@abc.de", alter: 52};
+
+        function initiiere()
+        {
+            befuelleInputs(personenDaten);
+
+        }
+        initiiere();
+
+
+        let diePersonen = [];
+        diePersonen.push(personenDaten);
+        diePersonen.push({vorname: "Michaela", nachname: "Maier", telefon: "0723/345563", email: "cacacacaca@abc.de", alter: 62});
+        diePersonen.push({vorname: "Detlef", nachname: "Kron", telefon: "07323/4343", email: "dadadadada_abc.de", alter: 21});
+        diePersonen.push({vorname: "Maria", nachname: "Schabrowski", telefon: "07323/31241", email: "eaeaeaeaea@abc.de", alter: 18});
+        diePersonen.push({vorname: "Josef", nachname: "Maier", telefon: "0723/345563", email: "jajajajajajabc.de", alter: 67});
+
+        /*get fehlermeldung-spans*/
+        let spanVorname = document.getElementById("fehlerVorname");
+        let spanNachname = document.getElementById("fehlerNachname");
+        let spanAlter = document.getElementById("fehlerAlter");
+
+
+        /*get input-elemente*/
+        let inputVorname = document.getElementById("idVorname");
+        let inputNachname = document.getElementById("nachname");
+        let inputAlter = document.getElementById("alter");
+
+        /*füge eventlistener hinzu*/
+        //inputVorname.addEventListener("change", function(){ alert("change");});
+        inputVorname.addEventListener("input", inputVorname_Changed);
+        inputNachname.addEventListener("input", inputNachame_Changed);
+        inputAlter.addEventListener("input", inputAlter_Changed);
+
+        function inputVorname_Changed()
+        {
+            //fehlermeldung soll verschwinden
+           lassFehlerSpanVerschwinden(spanVorname);
+        }
+        function inputNachame_Changed()
+        {
+            lassFehlerSpanVerschwinden(spanNachname);
+        }
+        function inputAlter_Changed()
+        {
+            lassFehlerSpanVerschwinden(spanAlter);
+        }
+
+
+        function lassFehlerSpanVerschwinden(fehlerspan)
+        {
+            if (fehlerspan.style.display != "none") {
+                fehlerspan.style.display = "none";
+            }
+        }
+
+
+
+        function validiere()
+        {
+        let istValide = true;
+           if (inputVorname.value == "") {
+               //alert("false validiert...");
+               spanVorname.style.display = "block";
+               //return false; //unterbinde das Verschicken der Formulardaten
+               istValide = false;
+           }
+           if (inputNachname.value.length < 2) {
+                spanNachname.style.display = "block";
+                istValide = false;
+           }
+           if (   !(inputAlter.value >= 18 && inputAlter.value <= 120) ) {
+               spanAlter.style.display = "block";
+                istValide = false;
+           }
+
+           return istValide;
+        }
+
+        /*wenn falsch validiert wurde, soll (bis zum nächsten Drücken des Submitbuttons)
+             der Warnhinweis erscheinen. In Roter Farbe.
+
+             Das Feld darf nicht leer sein...
+
+
+
+             Ausblenden der Warnhinweise soll nicht mehr über das Submit-Event gehen, sondern übers
+             input-Event => wird durch die Usereingabe der Datenwert valide, so soll der Fehler verschwinden
+
+             Der Nachname muss mindestens 2 Buchstaben haben (+ es dürfen keine Sonderzeichen enthalten sein)
+
+
+             füge ein Warnhinweis ein für das Feld Nachname => auftreten, aber auch
+             wieder bei input-change verschwinden
+
+             - es sollen mehrere Fehlermeldungen gleichzeitig auftreten können
+
+
+
+             es soll auf das Formular hinzugefügt werden:
+                input für das Alter (type number)
+            Validiere Alter: Person muss mindestens 18 sein - höchstens 120
+                führe entsprechende Fehlermeldung ein
+             */
+
+    </script>
+
+</body>
+</html>
