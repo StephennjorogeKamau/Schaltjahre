@@ -1,0 +1,15 @@
+﻿<Window x:Class="Stremark_Mitarbeiter_GmbH.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Stremark_Mitarbeiter_GmbH"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+    <Grid>
+
+        <Button Name="btnAnzieger" Content="ziegen" Height="20" Width="50" Click="btnAnzieger_Click" Margin="56,361,388,40" />
+        <TextBox Name="query"></TextBox>
+
+    </Grid>
+</Window>
