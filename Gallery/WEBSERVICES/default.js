@@ -54,5 +54,5 @@ function RemoteAdditionJQuery(){
 
     $.getJSON('/addition', request, function(response){
         $('#result')
-    }
+    });
 }

@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width = device-width, initial-scale=1.0" />
+    <title>Formular</title>
+
+    <style>
+        input{
+            background-color: beige;
+        }
+
+        form{
+            width: 60vw;
+            border: 10px dotted pink;
+            margin: 10px auto;
+
+            display: grid inline-flex;
+            grid-template-columns: aut inherit;
+        }
+        button{
+            width : 90px;
+            height : 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <!--struktiriere das Fomular (HTML), um die Persondaten dort speichern zu können-->
+    <form id="MyForm">
+        <label for="idName">Vorname: </label>
+        <input type="text" name="vorname" id="idVorname" /><br /><br />
+        <label for="idName">Nachname: </label>
+        <input type="text" name="nachname" id="idNachname" /><br /><br />
+        <label for="idTelefon">Telefon: </label>
+        <input type="tel" name="telephone" id="idTelefon" /><br /><br />
+        <label for="idE-Mail">E-Mail: </label>
+        <input type="email" name="email" id="idE-Mail" /><br /><br />
+        <label for="idAlter">ALTER: </label>
+        <input type="number" name="alter" id="idAlter" /><br /><br />
+        <label for="idName">Geschlecht: </label>
+        <input type="radio" name="gender" id="idWeiblich">Weiblich
+        <input type="radio" name="gender" id="idMännlich">Männlich<br /><br />
+
+
+    <div class="navbutton">
+         <input type="submit" name="Submit" id="idSubmit" />
+        <input type="reset" name="Reset" id="idReset" />
+        <button id="idrucksetz">Erste</button>
+        <button id="idvorwaert" >Vorwärts</button>
+        <button id="idruckwaert">Rückswärts</button>
+        <button id="idrucksetz">Läste</button>
+    </div>
+    </form>
+
+    <script>
+
+       
+
+
+        let personDaten = { vorname: "Stephen", nachname: "Kamau", telefon: "0723808568", email: "stevekamau01@yahoo.com", alter: 28 };
+        // let personDaten1 = { vorname: "Maria", nachname: "Maua", telefon: "072380457", email: "mariamaua@yahoo.com" };
+
+        /*Aufgabe
+         struktiriere das Fomular (HTML), um die Persondaten dort speichern zu können
+
+         Fülle die Felder mit den personenDaten aus (JavaScript)
+
+         Gestalte das Form-Element (CSS), etwa mit der CSS Grid*/
+
+        //Fülle die Felder mit den personenDaten aus (JavaScript)
+        function fuelle() {
+            document.getElementById("idVorname").value = personDaten.vorname;
+            document.getElementById("idNachname").value = personDaten.nachname;
+            document.getElementById("idTelefon").value = personDaten.telefon;
+            document.getElementById("idE-Mail").value = personDaten.email;
+            document.getElementById("idAlter").value = personDaten.alter;
+        };
+        fuelle();
+
+        let diepersone = [];
+        diepersone.push(personDaten);
+        diepersone.push({ vorname: "Stephen", nachname: "Kamau", telefon: "0723808568", email: "stevekamau01@yahoo.com", alter: 33 });
+        diepersone.push({ vorname: "Mark", nachname: "Kamau", telefon: "0723808205", email: "Markkamau01@yahoo.com", alter: 25 });
+        diepersone.push({ vorname: "Esther", nachname: "Kamau", telefon: "0723123568", email: "Essxkah12@yahoo.com", alter: 31 });
+        diepersone.push({ vorname: "Pastor", nachname: "Mark", telefon: "0723623568", email: "PstMark@yahoo.com", alter: 40 });
+        diepersone.push({ vorname: "Laura", nachname: "Mark", telefon: "0723623568", email: "PstMark@yahoo.com", alter: 22 });
+        diepersone.push({ vorname: "Martin", nachname: "Lawrence", telefon: "0723623568", email: "martinLaw_yahoo.com", alter: 48 });
+        diepersone.push({ vorname: "Maria", nachname: "Carey", telefon: "0723623568", email: "Currywurst..yahoo.com", alter: 52 });
+
+        console.log("Die Personen des Arrays: ");
+        for (let i = 0; i < diepersone.length; i++) {
+            const element = diepersone[i];
+            console.log("\t" + element.vorname + " " + element.nachname + " - Email: " + element.email + element.alter + "");
+
+        }
+
+        //A.Erstellen weiter personenobjekte mit der gleichen Daten struktur(Vorname, (s.os))
+        //B. Speicher diese in einem Array
+        //C. gib schleifenbasiert sämtliche wert aus (vgl.unten)
+        //D. Checke ob Herr Kron In der Liste vorkommt....
+        //E. zähle die Vorkommen von "Steve"
+        //F. Schreibe eine Funktion, die das Vorkommen eines übergebenen Nachnamens sucht (Parameter, "Nachname");
+        //  Funktion soll die Anzahl des Vorkomme Zuruckgeben
+        //G. Sind alle Emails valide.
+
+        //js array: Https//:www.w3schools.com/js/js_arrays.asp
+
+        let koffer = [];    //leer array, speicher es in der  (globalen) variablen koffer ab.
+        koffer.push("Handtuch");        //füge Element hinzu.
+        koffer.push("Schwamm");
+        koffer.push("Hemd");
+        console.log("Anzahl der Element von meine array: " + koffer.length);
+
+        //untersuche  / drucke den Inhalt des koffer mithilfe von kontrollstrukturen (v.a. Wiedeholung)
+
+        console.log("inhalt des kofffers");
+        for (let i = 0; i < koffer.length; i++) {
+            console.log("\t" + "Nr" + (i + 1) + ": " + koffer[i]);
+        }
+
+        // untersuche, ob im koffer ein Schwamm ist
+        let istSchwammImKoffer = false;
+        for (let i = 0; i < koffer.length; i++) {
+            if (koffer[i] == "Schwamm") {
+                istSchwammImKoffer = true;
+                break;
+
+            }
+            if (istSchwammImKoffer == true) {
+                console.log("Im Koffer befindet sich Nicht ein Schwamm")
+
+            } else {
+                console.log("Im Koffer befindet sich ein Schwamm")
+            }
+        }
+
+        //Untersuche, ob im  Liste Mark komst vor
+        let istPersonImListe = false;
+        for (let i = 0; i < diepersone.length; i++) {
+            const aktuellePerson = diepersone[i]
+            if (aktuellePerson.nachname == "Mark") {
+                istSchwammImKoffer = true;
+                break;
+
+            }
+            if (istPersonImListe == true) {
+                console.log("Im Liste findet sich Nicht Mark")
+
+            } else {
+                console.log("Im Liste findet sich Mark")
+            }
+        }
+        //zählen die Anzahl der Hemeden im Koffer
+        let zaehler = 0;
+        for (let index = 0; index < koffer.length; index++) {
+            const inhalt = koffer[index];
+            if (inhalt == "Hemd") {
+                zaehler++;
+            }
+
+        }
+        console.log("Hemd werde " + zaehler + " Mal gefunden!");
+
+        //übergebenen Nachnamens Anzahl
+        let zahler = 0;
+        for (let i = 0; i < diepersone.length; i++) {
+            const name = diepersone[i];
+            if (name.nachname == "Mark") {
+                zahler++;
+            }
+
+        }
+        console.log("Anzahl von Mark " + zahler);
+
+        //übergebenen Nachnamens sucht
+
+        function vorkommenPerson(nachname) {
+            let anzahl = 0;
+            for (let i = 0; i < diepersone.length; i++) {
+                const name = diepersone[i];
+                if (name.nachname == nachname) {
+                    anzahl++;
+                }
+            }
+            return anzahl;
+        }
+
+        //Emails valide.
+        let EmailValide = true;
+        for (let i = 0; i < personDaten.length; i++) {
+            if (diepersone[i].email.includes("@") != true) {
+                EmailValide = false;
+                break;
+            }
+        }
+        if (EmailValide == true) {
+            console.log("Alle Emails sind Valide");
+
+        } else {
+            console.log("mindestens Emails sind nicht Valide");
+        }
+
+        //Personen mit invaliden Emails sollen in ein zweites Array gespeichert werden
+        let personenMitInvalidenMails = [];
+        for (let i = 0; i < diepersone.length; i++) {
+            if (diepersone[i].email.includes("@") != true) {
+                personenMitInvalidenMails.push(diepersone[i]);
+            }
+        }
+        console.log("Anzahl von Personen mit invalider Emails: " + personenMitInvalidenMails.length);
+        for (let i = 0; i < personenMitInvalidenMails.length; i++) {
+            const element = personenMitInvalidenMails[i];
+            console.log("\tinvalide Emails: " + element.email + "von " + element.nachname);
+        }
+
+        //Personen zwischen 25-50 Älter
+        let personenAlter25_50 = [];
+        for (let i = 0; i < diepersone.length; i++) {
+            if (diepersone[i].alter >= 25 && diepersone[i].alter <= 50) {
+                personenAlter25_50.push(diepersone[i]);
+            }
+        }
+        console.log("Anzahl von Personen zwichen 25 und 50 Alt: " + personenAlter25_50.length);
+        for (let i = 0; i < personenAlter25_50.length; i++) {
+            const element = personenAlter25_50[i];
+            console.log("\t" + element.vorname + " ist " + element.alter + " Jahre alt.");
+        }
+
+        // das Durchschnittsalter
+        let gesamtAlter = 0;
+        for (let i = 0; i < diepersone.length; i++) {
+            gesamtAlter += diepersone[i].alter;
+        }
+        let durchschnitt = gesamtAlter / diepersone.length;
+        console.log("Gesamteralter (" + gesamtAlter + ") durch Anzahl Personen (" + diepersone.length + ") = Durschnnit: " + durchschnitt);
+
+       
+
+        //Button Vorsetz und rucksetz
+        document.getElementById("idvorsetz").addEventListener("click", zuErste);
+        document.getElementById("idrucksetz").addEventListener("click", zuLäste );
+
+        function input(personDaten) {
+
+            document.getElementById("idVorname").value = personDaten.vorname;
+            document.getElementById("idNachname").value = personDaten.nachname;
+            document.getElementById("idTelefon").value = personDaten.telefon;
+            document.getElementById("idE-Mail").value = personDaten.email;
+            document.getElementById("idAlter").value = personDaten.alter;
+        }
+        function zuErste() {
+            input(diepersone[diepersone.length]);
+            personDatenIndex = 0;
+        }
+        function zuLäste() {
+            input(diepersone[0]);
+            personDatenIndex = -1;
+        }
+        
+        
+
+    </script>
+</body>
+</html>
