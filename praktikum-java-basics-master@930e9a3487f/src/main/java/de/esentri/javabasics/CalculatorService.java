@@ -50,6 +50,28 @@ public class CalculatorService {
   // Bei richtiger Eingabe true zurückgeben, sonst false.
   // Operatoren: "+", "-", "*", "/"
   public boolean mathsTrainer() {
+    switch (operator) {
+
+      case 0:
+        operanden = "+";
+        c = d + e;
+        break;
+      case 1:
+        operanden = "-";
+        c = d - e;
+        break;
+      case 2:
+        operanden = "*";
+        c = d * e;
+        break;
+      case 3:
+        operanden = "/";
+        c = d / e;
+        break;
+      default:
+        operanden = "";
+    }
     return true;
+
   }
 }
