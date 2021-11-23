@@ -50,42 +50,59 @@ public class CalculatorService {
   // Dann muss der Nutzer die Lösung in die Konsole eingeben und es wird geprüft.
   // Bei richtiger Eingabe true zurückgeben, sonst false.
   // Operatoren: "+", "-", "*", "/"
-  public boolean mathsTrainer() {
-    switch (operator) {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
 
-      case 0:
-        operanden = "+";
-        c = d + e;
-        break;
-      case 1:
-        operanden = "-";
-        c = d - e;
-        break;
-      case 2:
-        operanden = "*";
-        c = d * e;
-        break;
-      case 3:
-        operanden = "/";
-        c = d / e;
-        break;
-      default:
-        operanden = "";
-    }
-    //return true;
-    System.out.println("What is: " + d + operanden + e + "?");
-    b = sc.nextInt();
-    if(b!=c)
-      System.out.println("Wrong answer! Right answer is: "+c);
-    else{if(b==c)
-      System.out.println("Right answer!"+c);
-    }
-    System.out.println("Continue? y/n");
-    a = sc.next();
+    String a;
+    do {
+      String operanden = null;
+      int b = 0;
+      int c = 0;
 
-  } while (a.equals("y"));
+      Random number = new Random();
+      int d = number.nextInt(10) + 1;
+      int e = number.nextInt(10) + 1;
 
+
+      Random operatorChoice = new Random();
+      int operator = operatorChoice.nextInt(4);
+
+
+      switch (operator) {
+
+        case 0:
+          operanden = "+";
+          c = d + e;
+          break;
+        case 1:
+          operanden = "-";
+          c = d - e;
+          break;
+        case 2:
+          operanden = "*";
+          c = d * e;
+          break;
+        case 3:
+          operanden = "/";
+          c = d / e;
+          break;
+        default:
+          operanden = "";
+      }
+      System.out.println("What is: " + d + operanden + e + "?");
+      b = sc.nextInt();
+      if(b!=c)
+        System.out.println("Wrong answer! Right answer is: "+c);
+      else{if(b==c)
+        System.out.println("Right answer!"+c);
+      }
+      System.out.println("Continue? y/n");
+      a = sc.next();
+
+    } while (a.equals("y"));
+
+  }
 
 }
-}
-        "i -= key = " + i -= key)
+
+
