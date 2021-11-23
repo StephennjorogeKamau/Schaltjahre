@@ -1,5 +1,6 @@
 package de.esentri.javabasics;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
@@ -17,7 +18,7 @@ public class CalculatorService {
   // Beispiel: a = 5, b = 3, Operator "*", Lösung : 15
   // Beispiel: a = 4 b = 2, Operator "/", Lösung : 2
   // Operatoren: "+", "-", "*", "/"
-  public double calculateByOperator(double a, double b, String operator) {
+  public double calculateByOperator(double a, double b, @NotNull String operator) {
     //Use case
     switch (operator) {
       case "+" -> {
@@ -72,7 +73,7 @@ public class CalculatorService {
         operanden = "";
     }
     //return true;
-    System.out.println("What is: " + d + operatorSwitch + e + "?");
+    System.out.println("What is: " + d + operanden + e + "?");
     b = sc.nextInt();
     if(b!=c)
       System.out.println("Wrong answer! Right answer is: "+c);
@@ -84,5 +85,7 @@ public class CalculatorService {
 
   } while (a.equals("y"));
 
-  }
+
 }
+}
+        "i -= key = " + i -= key)
