@@ -71,7 +71,18 @@ public class CalculatorService {
       default:
         operanden = "";
     }
-    return true;
+    //return true;
+    System.out.println("What is: " + d + operatorSwitch + e + "?");
+    b = sc.nextInt();
+    if(b!=c)
+      System.out.println("Wrong answer! Right answer is: "+c);
+    else{if(b==c)
+      System.out.println("Right answer!"+c);
+    }
+    System.out.println("Continue? y/n");
+    a = sc.next();
+
+  } while (a.equals("y"));
 
   }
 }
