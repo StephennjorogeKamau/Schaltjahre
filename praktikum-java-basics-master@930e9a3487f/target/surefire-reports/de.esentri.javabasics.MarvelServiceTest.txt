@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: de.esentri.javabasics.MarvelServiceTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 5, Errors: 3, Skipped: 0, Time elapsed: 0.006 s <<< FAILURE! - in de.esentri.javabasics.MarvelServiceTest
+buildMarvelHeroObjectForIdTest_hitman  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "de.esentri.javabasics.MarvelHero.getPage_id()" because "buildHero" is null
+	at de.esentri.javabasics.MarvelServiceTest.buildMarvelHeroObjectForIdTest_hitman(MarvelServiceTest.java:125)
+
+findNameByIdTest_ironman  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <"Iron Man (Anthony \""Tony\"" Stark)"> but was: <null>
+	at de.esentri.javabasics.MarvelServiceTest.findNameByIdTest_ironman(MarvelServiceTest.java:45)
+
+buildMarvelHeroObjectForIdTest_hulk  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "de.esentri.javabasics.MarvelHero.getPage_id()" because "buildHero" is null
+	at de.esentri.javabasics.MarvelServiceTest.buildMarvelHeroObjectForIdTest_hulk(MarvelServiceTest.java:109)
+
+buildMarvelHeroObjectForIdTest_spiderMan  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "de.esentri.javabasics.MarvelHero.getPage_id()" because "buildHero" is null
+	at de.esentri.javabasics.MarvelServiceTest.buildMarvelHeroObjectForIdTest_spiderMan(MarvelServiceTest.java:93)
+
+countAppearancesTest_Aug64  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <15> but was: <0>
+	at de.esentri.javabasics.MarvelServiceTest.countAppearancesTest_Aug64(MarvelServiceTest.java:69)
+
+countAppearancesTest_sep71  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <6> but was: <0>
+	at de.esentri.javabasics.MarvelServiceTest.countAppearancesTest_sep71(MarvelServiceTest.java:57)
+
+findNameByIdTest_leslie  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Leslie Lenrow (Earth-616)> but was: <null>
+	at de.esentri.javabasics.MarvelServiceTest.findNameByIdTest_leslie(MarvelServiceTest.java:33)
+
+findNameByIdTest_jay  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Jay Kelsey (Earth-616)> but was: <null>
+	at de.esentri.javabasics.MarvelServiceTest.findNameByIdTest_jay(MarvelServiceTest.java:20)
+
