@@ -22,7 +22,8 @@ public class BankAccountService {
 
     // Gebe das Bankkonto zurück welches der übergebenen Bank zugeordnet ist und die übergebene IBAN besitzt
     public BankAccount findByBankAndIban(Bank bank, String iban) throws NoAccountWithIbanException {
-        for (bank.getBankAccounts())
+        //for (bank.getBankAccounts())
+        return  null;
     }
 
     // Geld überweisen
