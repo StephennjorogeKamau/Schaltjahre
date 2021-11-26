@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: de.esentri.javabasics.CryptoServiceTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.054 s <<< FAILURE! - in de.esentri.javabasics.CryptoServiceTest
+decryptTest_Snhtqfx  Time elapsed: 0.028 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Nicolas> but was: <null>
+	at de.esentri.javabasics.CryptoServiceTest.decryptTest_Snhtqfx(CryptoServiceTest.java:53)
+
+encryptTest_zZzzZ  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <eEeeE> but was: <null>
+	at de.esentri.javabasics.CryptoServiceTest.encryptTest_zZzzZ(CryptoServiceTest.java:35)
+
+decryptTest_Satz  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Ein ganzer Satz, wow!> but was: <null>
+	at de.esentri.javabasics.CryptoServiceTest.decryptTest_Satz(CryptoServiceTest.java:80)
+
+decryptTest_Y1qq  Time elapsed: 0.011 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <T1ll> but was: <null>
+	at de.esentri.javabasics.CryptoServiceTest.decryptTest_Y1qq(CryptoServiceTest.java:62)
+
+encryptTest_T1ll  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Y1qq> but was: <null>
+	at de.esentri.javabasics.CryptoServiceTest.encryptTest_T1ll(CryptoServiceTest.java:26)
+
+encryptTest_Satz  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Jns lfsejw Xfye, btb!> but was: <null>
+	at de.esentri.javabasics.CryptoServiceTest.encryptTest_Satz(CryptoServiceTest.java:44)
+
+encryptTest_Nicolas  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Snhtqfx> but was: <null>
+	at de.esentri.javabasics.CryptoServiceTest.encryptTest_Nicolas(CryptoServiceTest.java:17)
+
+decryptTest_eEeeE  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <zZzzZ> but was: <null>
+	at de.esentri.javabasics.CryptoServiceTest.decryptTest_eEeeE(CryptoServiceTest.java:71)
+
