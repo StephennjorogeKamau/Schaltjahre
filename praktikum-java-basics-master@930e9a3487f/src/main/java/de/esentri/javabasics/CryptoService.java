@@ -7,8 +7,7 @@ import java.util.Scanner;
 @Service
 public class CryptoService {
 
-    int key;
-    String in;
+
 
     public String encrypt(String msg) {
 
@@ -52,24 +51,26 @@ public class CryptoService {
        // public String decrypt (String input){
             //return  null;
        // }
-        return  null;
+      return String.valueOf(chars);
     }
     //Decrypt message
-    public String decrypt (String in){
+    public String decrypt (String msg){
 
         //user input
-        System.out.println();
+        /*System.out.println();
         System.out.println();
         System.out.println("would you like to decrypt your text?");
         System.out.println("Continue? y/n");
-        in = String.valueOf(in.chars());
+        in = String.valueOf(in.chars());*/
+        int key = 5;
 
-        String decrypt =String.valueOf(in.chars());
+        Scanner in = new Scanner(System.in);
+        String decrypt = in.next();
         char[] chars = decrypt.toCharArray();
         for(char i : chars){
             i -= key;
             System.out.print(chars);
         }
-        return null;
+        return String.valueOf(chars);
     }
 }

@@ -1,36 +1,36 @@
 -------------------------------------------------------------------------------
 Test set: de.esentri.javabasics.CryptoServiceTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.054 s <<< FAILURE! - in de.esentri.javabasics.CryptoServiceTest
-decryptTest_Snhtqfx  Time elapsed: 0.028 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Nicolas> but was: <null>
+Tests run: 8, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.065 s <<< FAILURE! - in de.esentri.javabasics.CryptoServiceTest
+decryptTest_Snhtqfx  Time elapsed: 0.031 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Nicolas> but was: <java.util.stream.IntPipeline$Head@4ae3c1cd>
 	at de.esentri.javabasics.CryptoServiceTest.decryptTest_Snhtqfx(CryptoServiceTest.java:53)
 
-encryptTest_zZzzZ  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <eEeeE> but was: <null>
+encryptTest_zZzzZ  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <eEeeE> but was: <Nicolas>
 	at de.esentri.javabasics.CryptoServiceTest.encryptTest_zZzzZ(CryptoServiceTest.java:35)
 
-decryptTest_Satz  Time elapsed: 0.005 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Ein ganzer Satz, wow!> but was: <null>
+decryptTest_Satz  Time elapsed: 0.007 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Ein ganzer Satz, wow!> but was: <java.util.stream.IntPipeline$Head@2b6856dd>
 	at de.esentri.javabasics.CryptoServiceTest.decryptTest_Satz(CryptoServiceTest.java:80)
 
-decryptTest_Y1qq  Time elapsed: 0.011 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <T1ll> but was: <null>
+decryptTest_Y1qq  Time elapsed: 0.006 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <T1ll> but was: <java.util.stream.IntPipeline$Head@15761df8>
 	at de.esentri.javabasics.CryptoServiceTest.decryptTest_Y1qq(CryptoServiceTest.java:62)
 
 encryptTest_T1ll  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Y1qq> but was: <null>
+org.opentest4j.AssertionFailedError: expected: <Y1qq> but was: <Nicolas>
 	at de.esentri.javabasics.CryptoServiceTest.encryptTest_T1ll(CryptoServiceTest.java:26)
 
 encryptTest_Satz  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Jns lfsejw Xfye, btb!> but was: <null>
+org.opentest4j.AssertionFailedError: expected: <Jns lfsejw Xfye, btb!> but was: <Nicolas>
 	at de.esentri.javabasics.CryptoServiceTest.encryptTest_Satz(CryptoServiceTest.java:44)
 
-encryptTest_Nicolas  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Snhtqfx> but was: <null>
+encryptTest_Nicolas  Time elapsed: 0.007 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Snhtqfx> but was: <Nicolas>
 	at de.esentri.javabasics.CryptoServiceTest.encryptTest_Nicolas(CryptoServiceTest.java:17)
 
 decryptTest_eEeeE  Time elapsed: 0.005 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <zZzzZ> but was: <null>
+org.opentest4j.AssertionFailedError: expected: <zZzzZ> but was: <java.util.stream.IntPipeline$Head@3bd40a57>
 	at de.esentri.javabasics.CryptoServiceTest.decryptTest_eEeeE(CryptoServiceTest.java:71)
 
