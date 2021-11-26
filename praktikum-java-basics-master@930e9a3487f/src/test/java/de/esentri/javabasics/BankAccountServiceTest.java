@@ -1,3 +1,4 @@
+/*
 package de.esentri.javabasics;
 
 import de.esentri.javabasics.bankaccount.Bank;
@@ -11,9 +12,9 @@ import de.esentri.javabasics.bankaccount.exceptions.WrongPinException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*/;
 
-class BankAccountServiceTest {
+/*yclass BankAccountServiceTest {
 
     BankAccountService sut = new BankAccountService();
 
@@ -160,4 +161,4 @@ class BankAccountServiceTest {
         // Then
         Assertions.assertThrows(WrongPinException.class, () -> sut.depositMoney(originBankAccount, 2000, 2943));
     }
-}
+}*/
