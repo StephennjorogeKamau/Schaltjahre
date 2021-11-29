@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: de.esentri.javabasics.CryptoServiceTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.048 s <<< FAILURE! - in de.esentri.javabasics.CryptoServiceTest
+decryptTest_Snhtqfx  Time elapsed: 0.03 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Nicolas> but was: <Snhtqfx>
+	at de.esentri.javabasics.CryptoServiceTest.decryptTest_Snhtqfx(CryptoServiceTest.java:53)
+
+encryptTest_zZzzZ  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <eEeeE> but was: <Nicolas>
+	at de.esentri.javabasics.CryptoServiceTest.encryptTest_zZzzZ(CryptoServiceTest.java:35)
+
+decryptTest_Satz  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Ein ganzer Satz, wow!> but was: <Jns lfsejw Xfye, btb!>
+	at de.esentri.javabasics.CryptoServiceTest.decryptTest_Satz(CryptoServiceTest.java:80)
+
+decryptTest_Y1qq  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <T1ll> but was: <Y1qq>
+	at de.esentri.javabasics.CryptoServiceTest.decryptTest_Y1qq(CryptoServiceTest.java:62)
+
+encryptTest_T1ll  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Y1qq> but was: <Nicolas>
+	at de.esentri.javabasics.CryptoServiceTest.encryptTest_T1ll(CryptoServiceTest.java:26)
+
+encryptTest_Satz  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Jns lfsejw Xfye, btb!> but was: <Nicolas>
+	at de.esentri.javabasics.CryptoServiceTest.encryptTest_Satz(CryptoServiceTest.java:44)
+
+encryptTest_Nicolas  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Snhtqfx> but was: <Nicolas>
+	at de.esentri.javabasics.CryptoServiceTest.encryptTest_Nicolas(CryptoServiceTest.java:17)
+
+decryptTest_eEeeE  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <zZzzZ> but was: <eEeeE>
+	at de.esentri.javabasics.CryptoServiceTest.decryptTest_eEeeE(CryptoServiceTest.java:71)
+
