@@ -16,4 +16,7 @@ public class Mitglied {
   private String Lastname;
   private String email;
   private String phone;
+
+  public void setName(String matthias_schnell) {
+  }
 }
