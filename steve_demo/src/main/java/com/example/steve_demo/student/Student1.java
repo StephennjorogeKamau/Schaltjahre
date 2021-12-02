@@ -1,6 +1,16 @@
 package com.example.steve_demo.student;
-
 import java.time.LocalDate;
+
+/*@Entity
+@Table
+public  class  Student{
+    @Id
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    )
+} */
 
 public class Student1 {
     private Long id;
