@@ -16,6 +16,7 @@ public class KreisResourceClient {
   private static final String LOCAL_URL = "http://0.0.0.0:9091/v1/mockService";
   private static final String REST_RESOURCE_KREIS = "/kreis";
 
+
   @Autowired private RestTemplate restTemplate;
 
   public ResponseEntity<Kreis[]> getAllKreise() {
